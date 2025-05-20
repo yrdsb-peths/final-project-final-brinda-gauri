@@ -11,7 +11,7 @@ public class FlappyBird extends Actor
     public FlappyBird()
     {
         GreenfootImage flappy = new GreenfootImage("FlappyBird.png");
-        flappy.scale(100,100);
+        flappy.scale(75,75);
         setImage(flappy);
     }
     
