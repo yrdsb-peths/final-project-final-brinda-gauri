@@ -8,15 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FlappyBird extends Actor
 {
+    int dy = 0;
+    int g = 1;
+    
     public FlappyBird()
     {
         GreenfootImage flappy = new GreenfootImage("FlappyBird.png");
-        flappy.scale(75,75);
+        flappy.scale(45,45);
         setImage(flappy);
     }
     
     public void act()
     {
-        // Add your action code here.
+        setLocation(getX(), getY() + dy);
+        if (Greenfoot.isKeyDown("space")){
+            dy = -10;
+        }
+        dy = dy + g;
     }
 }
