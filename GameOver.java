@@ -16,4 +16,11 @@ public class GameOver extends Actor
     {
         // Add your action code here.
     }
+    
+    public GameOver()
+    {
+        GreenfootImage gameOver = new GreenfootImage("game_over.png");
+        gameOver.scale(300,100);
+        setImage(gameOver);
+    }
 }
