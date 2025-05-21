@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class MyWorld extends World {
     public MyWorld() {
-        super(800, 450, 1);
+        super(800, 450, 1, false);
         
         //Sets the background image
         setBackground(new GreenfootImage("Background.jpg"));

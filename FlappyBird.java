@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FlappyBird extends Actor
 {
-    int dy = 0;
-    int g = 1;
+    double dy = 0;
+    double g = 1.3;
     
     public FlappyBird()
     {
@@ -20,7 +20,7 @@ public class FlappyBird extends Actor
     
     public void act()
     {
-        setLocation(getX(), getY() + dy);
+        setLocation(getX(), (int)(getY() + dy));
         if (Greenfoot.isKeyDown("space")){
             dy = -10;
         }
