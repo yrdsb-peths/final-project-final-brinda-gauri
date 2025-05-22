@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class FlappyBird here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class FlappyBird extends Actor
 {
     double dy = 0;
@@ -26,6 +20,19 @@ public class FlappyBird extends Actor
         if (Greenfoot.isKeyDown("space"))
         {
             dy = RAISE_SPEED;
+        }
+        
+        if (dy < -2)
+        {
+            setRotation(-20);
+        }
+        else if (dy < 4) 
+        {
+            setRotation(0);
+        }
+        else 
+        {
+            setRotation(20);
         }
         
         if(getY() > getWorld().getHeight())
