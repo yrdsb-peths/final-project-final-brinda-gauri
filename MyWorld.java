@@ -1,6 +1,7 @@
 import greenfoot.*;
 
 public class MyWorld extends World {
+
     public MyWorld() {
         super(800, 450, 1, false);
         
@@ -10,6 +11,8 @@ public class MyWorld extends World {
         FlappyBird flappy = new FlappyBird();
         addObject(flappy, 100, getHeight()/2);
     }
+    
+    
     
     
 }
