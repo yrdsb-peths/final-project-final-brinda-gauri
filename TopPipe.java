@@ -16,6 +16,7 @@ public class TopPipe extends Actor
     public void act()
     {
         GreenfootImage TopPipe = new GreenfootImage("top_pipe.png");
+        setImage(TopPipe);
         
         setLocation(getX() - Speed, getY());
     }
