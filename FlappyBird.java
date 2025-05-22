@@ -22,17 +22,21 @@ public class FlappyBird extends Actor
             dy = RAISE_SPEED;
         }
         
-        if (dy < -2)
+        if (dy < 1)
         {
-            setRotation(-20);
+            setRotation(-30);
         }
-        else if (dy < 4) 
+        else if (dy < 8) 
         {
             setRotation(0);
         }
-        else 
+        else if (dy < 12)
         {
-            setRotation(20);
+            setRotation(50);
+        }
+        else if (dy < 30) 
+        {
+            setRotation(1);
         }
         
         if(getY() > getWorld().getHeight())
