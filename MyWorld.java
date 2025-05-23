@@ -24,8 +24,8 @@ public class MyWorld extends World {
              TopPipe top = new TopPipe();
              BottomPipe bottom = new BottomPipe();
              
-             addObject(top, getWidth(), getHeight()/2);
-             addObject(bottom, getWidth(), getHeight()/2);
+             addObject(top, getWidth(), 0);
+             addObject(bottom, getWidth(), getHeight());
              
              counter = 0;
          }
