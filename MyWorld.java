@@ -2,6 +2,8 @@ import greenfoot.*;
 
 public class MyWorld extends World {
     int counter = 0;
+    public int score = 0;
+    Label scoreLabel;
     
     public MyWorld() {
         super(800, 450, 1, false);
@@ -11,8 +13,10 @@ public class MyWorld extends World {
         
         
         FlappyBird flappy = new FlappyBird();
-        
         addObject(flappy, 100, getHeight()/2);
+        
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 50, 50);
     }
     
     public void act()
@@ -27,7 +31,19 @@ public class MyWorld extends World {
              addObject(top, getWidth(), 0);
              addObject(bottom, getWidth(), getHeight());
              
+             increaseScore();
+             
              counter = 0;
          }
     }
+    
+    public void increaseScore()
+    { 
+        if (counter == 100)
+        {
+            score++;
+            scoreLabel.setValue(score);
+        }
+    }
+    
 }
