@@ -27,7 +27,6 @@ public class MyWorld extends World {
              addObject(top, getWidth(), getHeight()/2);
              addObject(bottom, getWidth(), getHeight()/2);
              
-             System.out.println(counter);
              counter = 0;
          }
     }
