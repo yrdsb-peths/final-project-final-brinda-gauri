@@ -28,8 +28,8 @@ public class MyWorld extends World {
              TopPipe top = new TopPipe();
              BottomPipe bottom = new BottomPipe();
              
-             addObject(top, getWidth(), 0);
-             addObject(bottom, getWidth(), getHeight());
+             addObject(top, getWidth(), -20);
+             addObject(bottom, getWidth(), getHeight()+20);
              
              increaseScore();
              
