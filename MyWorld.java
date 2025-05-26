@@ -4,13 +4,9 @@ public class MyWorld extends World {
     int counter = 0;
     public int score = 0;
     Label scoreLabel;
-    TopPipe top = new TopPipe();
-    BottomPipe bottom = new BottomPipe(); 
         
     public MyWorld() {
         super(800, 450, 1, false);
-        
-        //Sets the background image
         setBackground(new GreenfootImage("Background.jpg"));
         
         FlappyBird flappy = new FlappyBird();
@@ -26,21 +22,23 @@ public class MyWorld extends World {
          
          if (counter == 100) 
          { 
-            addObject(top, getWidth(), -20);
-            addObject(bottom, getWidth(), getHeight()+20);
-            
-            increaseScore();
-                
+            addPipePair();                
             counter = 0;
          }
     }
     
+    public void addPipePair()
+    {
+        TopPipe top = new TopPipe();
+        BottomPipe bottom = new BottomPipe();
+        
+        addObject(top, getWidth(), -20);
+        addObject(bottom, getWidth(), getHeight()+20);
+    }
+    
     public void increaseScore()
-    { 
-        if (top.getX() <= 100)
-        {
-            score++;
-            scoreLabel.setValue(score);
-        }
+    {
+        score++;
+        scoreLabel.setValue(score);
     }
 }
