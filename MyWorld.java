@@ -6,8 +6,6 @@ public class MyWorld extends World {
     Label scoreLabel;
     TopPipe top = new TopPipe();
     BottomPipe bottom = new BottomPipe(); 
-    
-    FlappyBird flappy = new FlappyBird();
         
     public MyWorld() {
         super(800, 450, 1, false);
@@ -15,6 +13,7 @@ public class MyWorld extends World {
         //Sets the background image
         setBackground(new GreenfootImage("Background.jpg"));
         
+        FlappyBird flappy = new FlappyBird();
         addObject(flappy,100, getHeight()/2);
         
         scoreLabel = new Label(0, 80);
@@ -38,16 +37,10 @@ public class MyWorld extends World {
     
     public void increaseScore()
     { 
-        if (top.getX() == 100)
+        if (top.getX() <= 100)
         {
             score++;
             scoreLabel.setValue(score);
         }
     }
-    
-    public void checkForScore()
-    {
-        
-    }
-    
 }
