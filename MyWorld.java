@@ -29,11 +29,19 @@ public class MyWorld extends World {
     
     public void addPipePair()
     {
+        int gapSize = 200;
+        int minY = 100;
+        int maxY = getHeight() - 100 - gapSize;
+        
+        int gapY = Greenfoot.getRandomNumber(maxY - minY + 1) + minY;
+        
         TopPipe top = new TopPipe();
         BottomPipe bottom = new BottomPipe();
         
-        addObject(top, getWidth(), -20);
-        addObject(bottom, getWidth(), getHeight()+20);
+        int pipeX = getWidth();
+        
+        addObject(top, pipeX, gapY - top.getImage().getHeight()/2 - gapSize/2);
+        addObject(bottom, pipeX, gapY + bottom.getImage().getHeight()/2 + gapSize/2);
     }
     
     public void increaseScore()
