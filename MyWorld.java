@@ -4,6 +4,8 @@ public class MyWorld extends World {
     int counter = 0;
     public int score = 0;
     Label scoreLabel;
+    TopPipe top = new TopPipe();
+    BottomPipe bottom = new BottomPipe(); 
     
     FlappyBird flappy = new FlappyBird();
         
@@ -24,22 +26,19 @@ public class MyWorld extends World {
          counter++;
          
          if (counter == 100) 
-         {
-             TopPipe top = new TopPipe();
-             BottomPipe bottom = new BottomPipe();
-             
-             addObject(top, getWidth(), -20);
-             addObject(bottom, getWidth(), getHeight()+20);
-             
-             increaseScore();
-             
-             counter = 0;
+         { 
+            addObject(top, getWidth(), -20);
+            addObject(bottom, getWidth(), getHeight()+20);
+            
+            increaseScore();
+                
+            counter = 0;
          }
     }
     
     public void increaseScore()
     { 
-        if (counter == 100)
+        if (top.getX() == 100)
         {
             score++;
             scoreLabel.setValue(score);
