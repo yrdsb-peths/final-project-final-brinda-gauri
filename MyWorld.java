@@ -30,18 +30,24 @@ public class MyWorld extends World {
     public void addPipePair()
     {
         int gapSize = 200;
-        int minY = 100;
-        int maxY = getHeight() - 100 - gapSize;
+        int pipeX = getWidth();
         
-        int gapY = Greenfoot.getRandomNumber(maxY - minY + 1) + minY;
+        int minGapY = gapSize/2 + 50;
+        int maxGapY = getHeight() - gapSize/2 - 50;
+        
+        int gapY = Greenfoot.getRandomNumber(maxGapY - minGapY + 1) + minGapY;
         
         TopPipe top = new TopPipe();
         BottomPipe bottom = new BottomPipe();
         
-        int pipeX = getWidth();
+        int topHeight = top.getImage().getHeight();
+        int bottomHeight = bottom.getImage().getHeight();
         
-        addObject(top, pipeX, gapY - top.getImage().getHeight()/2 - gapSize/2);
-        addObject(bottom, pipeX, gapY + bottom.getImage().getHeight()/2 + gapSize/2);
+        int topY = gapY - gapSize/2 - topHeight/2;
+        int bottomY = gapY + gapSize/2 + bottomHeight/2;
+        
+        addObject(top, pipeX, topY);
+        addObject(bottom, pipeX, bottomY);
     }
     
     public void increaseScore()
