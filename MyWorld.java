@@ -4,6 +4,7 @@ public class MyWorld extends World {
     int counter = 0;
     public int score = 0;
     Label scoreLabel;
+    GreenfootSound pointSound = new GreenfootSound("pointScoredSound.mp3");
         
     public MyWorld() {
         super(800, 450, 1, false);
@@ -53,6 +54,7 @@ public class MyWorld extends World {
     public void increaseScore()
     {
         score++;
+        pointSound.play();
         scoreLabel.setValue(score);
     }
 }

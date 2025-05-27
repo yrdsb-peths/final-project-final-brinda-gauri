@@ -5,6 +5,7 @@ public class FlappyBird extends Actor
     double dy = 0;
     double g = 1.3;
     double RAISE_SPEED = -10;
+    GreenfootSound flappyDiedSound = new GreenfootSound("flappyDiedSound.mp3");
     
     public FlappyBird()
     {
@@ -19,6 +20,7 @@ public class FlappyBird extends Actor
         
         if (getOneIntersectingObject(TopPipe.class) != null)
         {
+            flappyDiedSound.play();
             GameOver gameOver = new GameOver();
             getWorld().addObject(gameOver, getWorld().getWidth()/2, getWorld().getHeight()/2);
             Greenfoot.stop();
@@ -26,6 +28,7 @@ public class FlappyBird extends Actor
         
         if (getOneIntersectingObject(BottomPipe.class) != null)
         {
+            flappyDiedSound.play();
             GameOver gameOver = new GameOver();
             getWorld().addObject(gameOver, getWorld().getWidth()/2, getWorld().getHeight()/2);
             Greenfoot.stop();
@@ -55,6 +58,7 @@ public class FlappyBird extends Actor
         
         if(getY() > getWorld().getHeight())
         {
+            flappyDiedSound.play();
             GameOver gameOver = new GameOver();
             getWorld().addObject(gameOver, getWorld().getWidth()/2, getWorld().getHeight()/2);
             Greenfoot.stop();
