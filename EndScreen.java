@@ -1,11 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class EndScreen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class EndScreen extends World
 {
 
@@ -24,10 +18,10 @@ public class EndScreen extends World
         addObject(gameOver, getWidth()/2, 150);
         
         Label restartLabel = new Label ("Press <space> to Restart", 30);
-        addObject(restartLabel, getWidth()/2, 300);
+        addObject(restartLabel, getWidth()/2, 250);
         
         Label finalScore = new Label ("Your score was...", 30);
-        addObject(finalScore, getWidth()/2, 350);
+        addObject(finalScore, getWidth()/2, 300);
     }
     
     public void act()
