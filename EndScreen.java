@@ -25,6 +25,9 @@ public class EndScreen extends World
         
         Label restartLabel = new Label ("Press <space> to Restart", 30);
         addObject(restartLabel, getWidth()/2, 300);
+        
+        Label finalScore = new Label ("Your score was...", 30);
+        addObject(finalScore, getWidth()/2, 350);
     }
     
     public void act()
