@@ -18,12 +18,11 @@ public class FlappyBird extends Actor
     {
         setLocation(getX(), (int)(getY() + dy));
         
-        if (getOneIntersectingObject(TopPipe.class) != null)
+        if (getOneIntersectingObject(TopPipe.class) != null || getOneIntersectingObject(BottomPipe.class) != null || getY() > getWorld().getHeight())
         {
             flappyDiedSound.play();
-            GameOver gameOver = new GameOver();
-            getWorld().addObject(gameOver, getWorld().getWidth()/2, getWorld().getHeight()/2);
-            Greenfoot.stop();
+            Greenfoot.setWorld(new EndScreen());
+            return;
         }
         
         if (getOneIntersectingObject(BottomPipe.class) != null)
