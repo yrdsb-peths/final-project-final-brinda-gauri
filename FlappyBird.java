@@ -17,12 +17,18 @@ public class FlappyBird extends Actor
     {
         setLocation(getX(), (int)(getY() + dy));
         
-        if (getOneIntersectingObject(TopPipe.class) != null ||
-            getOneIntersectingObject(BottomPipe.class) != null ||
-            getY() > getWorld().getHeight())
+        if (getOneIntersectingObject(TopPipe.class) != null)
         {
-            Greenfoot.setWorld(new EndScreen());
-            return;
+            GameOver gameOver = new GameOver();
+            getWorld().addObject(gameOver, getWorld().getWidth()/2, getWorld().getHeight()/2);
+            Greenfoot.stop();
+        }
+        
+        if (getOneIntersectingObject(BottomPipe.class) != null)
+        {
+            GameOver gameOver = new GameOver();
+            getWorld().addObject(gameOver, getWorld().getWidth()/2, getWorld().getHeight()/2);
+            Greenfoot.stop();
         }
         
         if (Greenfoot.isKeyDown("space"))
@@ -45,6 +51,13 @@ public class FlappyBird extends Actor
         else if (dy < 30) 
         {
             setRotation(1);
+        }
+        
+        if(getY() > getWorld().getHeight())
+        {
+            GameOver gameOver = new GameOver();
+            getWorld().addObject(gameOver, getWorld().getWidth()/2, getWorld().getHeight()/2);
+            Greenfoot.stop();
         }
         
         dy = dy + g;

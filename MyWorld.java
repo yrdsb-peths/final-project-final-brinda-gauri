@@ -12,7 +12,7 @@ public class MyWorld extends World {
         FlappyBird flappy = new FlappyBird();
         addObject(flappy,100, getHeight()/2);
         
-        scoreLabel = new Label(0, 70);
+        scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
     }
     
