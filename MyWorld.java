@@ -3,7 +3,7 @@ import greenfoot.*;
 public class MyWorld extends World {
     int counter = 0;
     public int score = 0;
-    public int highScore = 0;
+    public static int highScore = 0;
     Label scoreLabel;
     GreenfootSound pointSound = new GreenfootSound("pointScoredSound.mp3");
         
@@ -55,9 +55,9 @@ public class MyWorld extends World {
     public void increaseScore()
     {
         score++;
-        if (score > highScore)
+        if (score > MyWorld.highScore)
         {
-            highScore = score;
+            MyWorld.highScore = score;
         }
         pointSound.play();
         scoreLabel.setValue(score);
