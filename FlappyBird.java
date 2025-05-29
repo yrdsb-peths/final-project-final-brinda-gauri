@@ -9,7 +9,7 @@ public class FlappyBird extends Actor
     
     public FlappyBird()
     {
-        GreenfootImage flappy = new GreenfootImage("FlappyBird.png");
+        GreenfootImage flappy = new GreenfootImage("flappyBird.png");
         flappy.scale(50,50);
         setImage(flappy);
     }
