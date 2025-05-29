@@ -18,10 +18,10 @@ public class EndScreen extends World
         addObject(gameOver, getWidth()/2, 150);
         
         Label restartLabel = new Label ("Press <space> to Restart", 30);
-        addObject(restartLabel, getWidth()/2, 250);
+        addObject(restartLabel, getWidth()/2, 310);
         
         Label finalScore = new Label ("Your score was...", 30);
-        addObject(finalScore, getWidth()/2, 300);
+        addObject(finalScore, getWidth()/2, 270);
     }
     
     public void act()
