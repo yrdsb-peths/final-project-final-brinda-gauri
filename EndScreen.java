@@ -7,7 +7,7 @@ public class EndScreen extends World
      * Constructor for objects of class EndScreen.
      * 
      */
-    public EndScreen()
+    public EndScreen(int score)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 450, 1); 
@@ -20,7 +20,7 @@ public class EndScreen extends World
         Label restartLabel = new Label ("Press <space> to Restart", 30);
         addObject(restartLabel, getWidth()/2, 310);
         
-        Label finalScore = new Label ("Your score was...", 30);
+        Label finalScore = new Label ("Your score: " + score, 30);
         addObject(finalScore, getWidth()/2, 270);
     }
     
