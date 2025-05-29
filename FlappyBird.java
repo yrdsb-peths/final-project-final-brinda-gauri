@@ -24,7 +24,7 @@ public class FlappyBird extends Actor
         {
             flappyDiedSound.play();
             MyWorld world = (MyWorld)getWorld();
-            Greenfoot.setWorld(new EndScreen(world.score));
+            Greenfoot.setWorld(new EndScreen(world.score, world.highScore));
             return;
         }
         
