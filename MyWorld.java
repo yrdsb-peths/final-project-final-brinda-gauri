@@ -6,7 +6,7 @@ public class MyWorld extends World {
     public static int highScore = 0;
     Label scoreLabel;
     GreenfootSound pointSound = new GreenfootSound("pointScoredSound.mp3");
-        
+    public static GreenfootSound backgroundMusic = new GreenfootSound("Background.mp3");    
     public MyWorld() {
         super(800, 450, 1, false);
         setBackground(new GreenfootImage("Background.jpg"));
@@ -16,6 +16,9 @@ public class MyWorld extends World {
         
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
+        
+        backgroundMusic.setVolume(30);
+        backgroundMusic.playLoop();
     }
     
     public void act()
@@ -61,5 +64,10 @@ public class MyWorld extends World {
         }
         pointSound.play();
         scoreLabel.setValue(score);
+    }
+    
+    public static void stopMusic()
+    {
+        backgroundMusic.stop();
     }
 }
