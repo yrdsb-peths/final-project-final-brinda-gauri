@@ -6,12 +6,31 @@ public class FlappyBird extends Actor
     double g = 1.3;
     double RAISE_SPEED = -10;
     GreenfootSound flappyDiedSound = new GreenfootSound("flappyDiedSound.mp3");
+    GreenfootImage[] idle = new GreenfootImage[4];
+    SimpleTimer animationTimer = new SimpleTimer();
     
     public FlappyBird()
     {
-        GreenfootImage flappy = new GreenfootImage("flappyBird.png");
-        flappy.scale(50,50);
-        setImage(flappy);
+        for(int i = 0; i < idle.length; i++)
+        {
+            idle[i] = new GreenfootImage("images/flappy_idle/flappy" + i + ".png");
+            idle[i].scale(50,50);
+        }
+    
+        setImage(idle[0]);
+    }
+
+    int imageIndex = 0;
+    public void animateFlappy()
+    {
+        if (animationTimer.millisElapsed() < 200)
+        {
+            return;
+        }
+        animationTimer.mark();
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    
     }
     
     public void act()
