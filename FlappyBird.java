@@ -14,7 +14,7 @@ public class FlappyBird extends Actor
         for(int i = 0; i < idle.length; i++)
         {
             idle[i] = new GreenfootImage("images/flappy_idle/flappy" + i + ".png");
-            idle[i].scale(50,50);
+            idle[i].scale(40,40);
         }
     
         setImage(idle[0]);

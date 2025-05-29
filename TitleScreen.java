@@ -24,7 +24,18 @@ public class TitleScreen extends World
     {
         Label spaceLabel = new Label("Press <space> to Start & Play", 30);
         addObject(spaceLabel,getWidth()/2,300);
+        
         TitleName title = new TitleName();
         addObject(title, getWidth()/2, 150);
+        
+        FlappyIdle flappy = new FlappyIdle();
+        addObject(flappy,getWidth()/2-100,375);
+        
+        FlappyIdle flappy2 = new FlappyIdle();
+        addObject(flappy2,getWidth()/2,375);
+        
+        FlappyIdle flappy3 = new FlappyIdle();
+        addObject(flappy3,getWidth()/2+100,375);
+        
     }
 }
