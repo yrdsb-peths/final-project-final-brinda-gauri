@@ -9,6 +9,9 @@ public class FlappyBird extends Actor
     GreenfootImage[] idle = new GreenfootImage[4];
     SimpleTimer animationTimer = new SimpleTimer();
     
+    int startDelay = 45; 
+    boolean started = false;
+    
     public FlappyBird()
     {
         for(int i = 0; i < idle.length; i++)
@@ -35,6 +38,17 @@ public class FlappyBird extends Actor
     
     public void act()
     {
+        if (startDelay > 0)
+        {
+            startDelay--;
+            return;
+        }
+        if(!started)
+        {
+            started = true;
+            dy = 0;
+        }
+        
         setLocation(getX(), (int)(getY() + dy));
         
         if (getOneIntersectingObject(TopPipe.class) != null || 
