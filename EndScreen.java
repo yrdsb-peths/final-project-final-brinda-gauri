@@ -20,8 +20,6 @@ public class EndScreen extends World
         
         Label finalScore = new Label ("Your Score: " + score, 30);
         addObject(finalScore, getWidth()/2, 270);
-        
-        MyWorld.stopMusic();
     }
     
     public void act()
