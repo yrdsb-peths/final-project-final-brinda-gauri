@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class FlappyIdle extends Actor
+public class FlappyTitleScreen extends Actor
 {
     GreenfootImage[] idle = new GreenfootImage[4];
     SimpleTimer animationTimer = new SimpleTimer();
     int imageIndex = 0;
     
-    public FlappyIdle()
+    public FlappyTitleScreen()
     {
         for(int i = 0; i < idle.length; i++)
         {

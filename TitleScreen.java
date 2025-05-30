@@ -28,13 +28,13 @@ public class TitleScreen extends World
         TitleName title = new TitleName();
         addObject(title, getWidth()/2, 150);
         
-        FlappyIdle flappy = new FlappyIdle();
+        FlappyTitleScreen flappy = new FlappyTitleScreen();
         addObject(flappy,getWidth()/2-100,375);
         
-        FlappyIdle flappy2 = new FlappyIdle();
+        FlappyTitleScreen flappy2 = new FlappyTitleScreen();
         addObject(flappy2,getWidth()/2,375);
         
-        FlappyIdle flappy3 = new FlappyIdle();
+        FlappyTitleScreen flappy3 = new FlappyTitleScreen();
         addObject(flappy3,getWidth()/2+100,375);
         
     }
