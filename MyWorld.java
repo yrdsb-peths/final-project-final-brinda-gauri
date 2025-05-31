@@ -7,6 +7,7 @@ public class MyWorld extends World {
     Label scoreLabel;
     GreenfootSound pointSound = new GreenfootSound("pointScoredSound.mp3");
     FlappyBird flappy;
+    public int pipeSpeed = 4;
     
     public MyWorld() {
         super(800, 450, 1, false);
@@ -44,8 +45,8 @@ public class MyWorld extends World {
         
         int gapY = Greenfoot.getRandomNumber(maxGapY - minGapY + 1) + minGapY;
         
-        TopPipe top = new TopPipe();
-        BottomPipe bottom = new BottomPipe();
+        TopPipe top = new TopPipe(pipeSpeed);
+        BottomPipe bottom = new BottomPipe(pipeSpeed);
         
         int topHeight = top.getImage().getHeight();
         int bottomHeight = bottom.getImage().getHeight();
@@ -66,5 +67,10 @@ public class MyWorld extends World {
         }
         pointSound.play();
         scoreLabel.setValue(score);
+        
+        if (score%10 == 0)
+        {
+            pipeSpeed++;
+        }
     }
 }
