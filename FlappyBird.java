@@ -9,8 +9,8 @@ public class FlappyBird extends Actor
     GreenfootImage[] idle = new GreenfootImage[4];
     SimpleTimer animationTimer = new SimpleTimer();
     
-    int startDelay = 45; 
     boolean started = false;
+    private boolean waitingForKeyRelease = true;
     
     public FlappyBird()
     {
@@ -38,16 +38,26 @@ public class FlappyBird extends Actor
     
     public void act()
     {
-        if (startDelay > 0)
-        {
-            startDelay--;
-            return;
-        }
+        animateFlappy();
+        
         if(!started)
         {
-            started = true;
-            dy = 0;
-        }
+            if(waitingForKeyRelease)
+            {
+                if(!Greenfoot.isKeyDown("space"))
+                {
+                   waitingForKeyRelease = false;
+                } 
+                return;
+            }
+            
+            if(Greenfoot.isKeyDown("space"))
+            {
+                started = true;
+                dy = RAISE_SPEED;
+            }
+            return;
+        } 
         
         setLocation(getX(), (int)(getY() + dy));
         

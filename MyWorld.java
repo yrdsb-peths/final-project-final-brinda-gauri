@@ -6,12 +6,13 @@ public class MyWorld extends World {
     public static int highScore = 0;
     Label scoreLabel;
     GreenfootSound pointSound = new GreenfootSound("pointScoredSound.mp3");
+    FlappyBird flappy;
     
     public MyWorld() {
         super(800, 450, 1, false);
         setBackground(new GreenfootImage("Background.jpg"));
         
-        FlappyBird flappy = new FlappyBird();
+        flappy = new FlappyBird();
         addObject(flappy,100, getHeight()/2);
         
         scoreLabel = new Label(0, 80);
@@ -20,9 +21,13 @@ public class MyWorld extends World {
     
     public void act()
     {
-         counter++;
-         
-         if (counter == 100) 
+        if(!flappy.started)
+        {
+            return;
+        }
+        
+        counter++;
+        if (counter == 100) 
          { 
             addPipePair();                
             counter = 0;
