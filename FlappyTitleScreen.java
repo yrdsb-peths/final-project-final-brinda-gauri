@@ -6,6 +6,7 @@ public class FlappyTitleScreen extends Actor
     SimpleTimer animationTimer = new SimpleTimer();
     int imageIndex = 0;
     
+    //This method sets the starting image for the flappy animation
     public FlappyTitleScreen()
     {
         for(int i = 0; i < idle.length; i++)
@@ -15,7 +16,8 @@ public class FlappyTitleScreen extends Actor
         }
         setImage(idle[0]);
     }
-
+    
+    //This method creates the animation for the 3 flappy's on the title screen
     public void act()
     {
         if (animationTimer.millisElapsed() < 150)
