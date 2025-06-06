@@ -9,6 +9,7 @@ public class MyWorld extends World {
     FlappyBird flappy;
     public int pipeSpeed = 4;
     
+    //This method creates the game world by adding the background, flappy and score.
     public MyWorld() {
         super(800, 450, 1, false);
         setBackground(new GreenfootImage("Background.jpg"));
@@ -20,6 +21,7 @@ public class MyWorld extends World {
         addObject(scoreLabel, 50, 50);
     }
     
+    //This method adds a pipe pair to the screen.
     public void act()
     {
         if(!flappy.started)
@@ -35,6 +37,7 @@ public class MyWorld extends World {
          }
     }
     
+    //This method creates a pipe pair.
     public void addPipePair()
     {
         int gapSize = 200;
@@ -58,6 +61,7 @@ public class MyWorld extends World {
         addObject(bottom, pipeX, bottomY);
     }
     
+    //This method increases the score when flappy pases through a set of pipes.
     public void increaseScore()
     {
         score++;
