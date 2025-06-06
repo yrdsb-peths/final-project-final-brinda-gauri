@@ -12,6 +12,7 @@ public class FlappyBird extends Actor
     boolean started = false;
     private boolean waitingForKeyRelease = true;
     
+    //This method sets the flapp y image to the starting image for animation
     public FlappyBird()
     {
         for(int i = 0; i < idle.length; i++)
@@ -23,6 +24,7 @@ public class FlappyBird extends Actor
         setImage(idle[0]);
     }
 
+    //This method creates the flappy animation
     int imageIndex = 0;
     public void animateFlappy()
     {
@@ -36,6 +38,12 @@ public class FlappyBird extends Actor
     
     }
     
+    /**
+     * This method starts the game when the space key is pressed and changes 
+     * the rotation of flappy depending f he is going up or down. This method
+     * also queue's the end screen when flappy collides with the pipes or falls
+     * to the ground. 
+     */
     public void act()
     {
         animateFlappy();
