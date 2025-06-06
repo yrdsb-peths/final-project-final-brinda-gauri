@@ -6,6 +6,7 @@ public class TopPipe extends Actor
     int pipeSpeed;
     public boolean passed = false;
     
+    //This method creates the top pipe
     public TopPipe(int speed)
     {
         GreenfootImage TopPipe = new GreenfootImage("top_pipe.png");
@@ -13,6 +14,7 @@ public class TopPipe extends Actor
         this.pipeSpeed = speed;
     }
     
+    //This method sets the location of the top pipe and increases score if passed by flappy
     public void act()
     {
         setLocation(getX() - pipeSpeed, getY());
