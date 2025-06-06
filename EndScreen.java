@@ -2,6 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class EndScreen extends World
 {
+    /**
+     * This method creates an end screen by adding the background, and some
+     * labels showing the score, high score and how to restart the game.
+     */
     public EndScreen(int score, int highScore)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -22,6 +26,7 @@ public class EndScreen extends World
         addObject(finalScore, getWidth()/2, 270);
     }
     
+    //This method starts the game when the space key is pressed.
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))
