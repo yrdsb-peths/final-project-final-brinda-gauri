@@ -40,10 +40,11 @@ This is a Greenfoot-based recreation of the popular Flappy Bird game. You contro
 ## How to Play
 
 ### Start the Game:
-- Press the Run button and press a key to switch from the title screen to the game world.
+- Press the Run button to start the game
+- Press the space bar to switch from the title screen to the game world.
 
 ### Controls:
-- Press a key to flap and keep your bird in the air.
+- Press the space bar repeatedly to flap and keep your bird in the air.
 - Avoid colliding with pipes or falling to the ground.
 
 ### Scoring:
@@ -71,6 +72,7 @@ This is a Greenfoot-based recreation of the popular Flappy Bird game. You contro
 ## Teacher Notes
 
 There is no cheat code in this game.
+
 
 
 
